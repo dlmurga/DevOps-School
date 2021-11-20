@@ -4,7 +4,7 @@ RUN apt update \
     && apt install git -y \
     && apt install maven -y
 RUN mkdir /package \
-    && cd /package
+    && cd /package \
     && git clone https://github.com/efsavage/hello-world-war.git \
     && cd /package/hello-world-war \
     && mvn package \
