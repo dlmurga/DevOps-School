@@ -1,6 +1,8 @@
 FROM tomcat:9.0
 LABEL maintainer="dl.murga@yandex.ru"
-RUN apt update && apt install maven -y
+RUN apt update \
+    && apt install maven -y \
+    && mkdir /package
 ADD https://github.com/efsavage/hello-world-war.git /package
 RUN cd /package/hello-world-war \
     && mvn package \
