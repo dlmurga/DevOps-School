@@ -13,6 +13,7 @@ RUN apt update \
     && chmod -R u+x $TOMCAT_HOME/bin
 WORKDIR /
 RUN apt install maven -y \
+    && apt install git -y \
     && mkdir $PACKAGE_DIR \
     && cd $PACKAGE_DIR \
     && git clone https://github.com/efsavage/hello-world-war.git \
