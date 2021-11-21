@@ -9,8 +9,8 @@ RUN apt update \
     && wget http://dlcdn.apache.org/tomcat/tomcat-9/v9.0.55/bin/apache-tomcat-9.0.55.tar.gz \
     && tar zxvf apache-tomcat-*.tar.gz -C $TOMCAT_HOME --strip-components 1 \
     && rm -rf apache-tomcat-*.tar.gz \
-    && chown -R tomcat:tomcat /opt/tomcat/ \
-    && chmod -R u+x /opt/tomcat/bin \
+    && chown -R tomcat:tomcat $TOMCAT_HOME \
+    && chmod -R u+x $TOMCAT_HOME/bin \
 WORKDIR /
 RUN apt install maven -y \
     && mkdir $PACKAGE_DIR \
