@@ -7,7 +7,7 @@ RUN apt update \
     && useradd -m -d $TOMCAT_HOME -U -s /bin/false tomcat \
     && cd $TOMCAT_HOME \
     && wget http://dlcdn.apache.org/tomcat/tomcat-9/v9.0.55/bin/apache-tomcat-9.0.55.tar.gz \
-    && tar zxvf apache-tomcat-*.tar.gz -C /opt/tomcat --strip-components 1 \
+    && tar zxvf apache-tomcat-*.tar.gz -C $TOMCAT_HOME --strip-components 1 \
     && rm -rf apache-tomcat-*.tar.gz \
     && chown -R tomcat:tomcat /opt/tomcat/ \
     && chmod -R u+x /opt/tomcat/bin \
