@@ -11,7 +11,6 @@ RUN apt update \
     && rm -rf apache-tomcat-*.tar.gz \
     && chown -R tomcat:tomcat $TOMCAT_HOME \
     && chmod -R u+x $TOMCAT_HOME/bin \
-WORKDIR /
 RUN apt install maven -y \
     && mkdir $PACKAGE_DIR \
     && cd $PACKAGE_DIR \
