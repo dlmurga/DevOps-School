@@ -10,7 +10,8 @@ RUN apt update \
     && tar zxvf apache-tomcat-*.tar.gz -C $TOMCAT_HOME --strip-components 1 \
     && rm -rf apache-tomcat-*.tar.gz \
     && chown -R tomcat:tomcat $TOMCAT_HOME \
-    && chmod -R u+x $TOMCAT_HOME/bin \
+    && chmod -R u+x $TOMCAT_HOME/bin
+WORKDIR /
 RUN apt install maven -y \
     && mkdir $PACKAGE_DIR \
     && cd $PACKAGE_DIR \
