@@ -3,6 +3,7 @@ ENV TOMCAT_HOME="/usr/local/tomcat"
 ENV PACKAGE_DIR="/package"
 RUN apt update \
     && apt install default-jdk -y \
+    && apt install wget -y \
     && useradd -m -d $TOMCAT_HOME -U -s /bin/false tomcat \
     && cd $TOMCAT_HOME \
     && wget http://dlcdn.apache.org/tomcat/tomcat-9/v9.0.55/bin/apache-tomcat-9.0.55.tar.gz \
