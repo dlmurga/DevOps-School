@@ -15,7 +15,7 @@ services:
     volumes:
       - type: volume
         source: java-app-dir
-        target: /usr/lib/tomcat/webapps/
+        target: /data/
     ports:
       - "8080:8080"
     depends_on:
