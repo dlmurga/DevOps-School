@@ -1,7 +1,5 @@
 FROM ubuntu:latest
-RUN DEBIAN_FRONTEND=noninteractive apt install -y git default-jdk maven
-WORKDIR /package
-RUN git clone https://github.com/efsavage/hello-world-war.git
-WORKDIR /package/hello-world-war
-RUN mvn package
-VOLUME ./app_dir
+RUN DEBIAN_FRONTEND=noninteractive apt install -y default-jdk maven
+WORKDIR /package-07
+ADD https://github.com/efsavage/hello-world-war.git ./
+RUN mvn package ./hello-world-war/pom.xml

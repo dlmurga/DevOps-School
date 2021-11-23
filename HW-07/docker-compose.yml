@@ -3,4 +3,20 @@ version: '3.2'
 services:
   java-build:
     build:
-      context: java-build
+      context: java-build/
+    volumes:
+      - type: volume
+        source: java-app-dir
+        target: /package-07/hello-world-war/target/
+
+  java-run:
+    build:
+      context: java-run/
+    volumes:
+      - type: volume
+        source: java-app-dir
+        target: /usr/lib/tomcat/webapps/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - java-build
