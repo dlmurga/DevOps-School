@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 RUN DEBIAN_FRONTEND=noninteractive apt update \
     && apt install -y default-jdk maven
 WORKDIR /package-07
