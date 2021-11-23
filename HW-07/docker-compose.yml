@@ -1,21 +1,17 @@
 ---
-version: '3.2'
+version: '3.9'
 services:
   java-build:
     build:
       context: java-build/
     volumes:
-      - type: volume
-        source: java-app-dir
-        target: /package-07/hello-world-war/target/
+      - java-app-dir:/package-07/hello-world-war/target/
 
   java-run:
     build:
       context: java-run/
     volumes:
-      - type: volume
-        source: java-app-dir
-        target: /data/
+      - java-app-dir:/data/
     ports:
       - "8080:8080"
     depends_on:
