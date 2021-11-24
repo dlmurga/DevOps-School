@@ -6,7 +6,7 @@ WORKDIR $CATALINA_HOME
 RUN tar zxvf /tmp/apache-tomcat-*.tar.gz -C $CATALINA_HOME --strip-components 1 \
     && rm -rf /tmp/apache-tomcat-*.tar.gz \
     && chmod -R +x $CATALINA_HOME/bin/ \
-    && mkdir${RUN_APP_DIR} \
+    && mkdir ${RUN_APP_DIR} \
     && cp -r ${RUN_APP_DIR}/hello-world-war-1.0.0 $CATALINA_HOME/webapps/
 EXPOSE 8080
 CMD $CATALINA_HOME/bin/catalina.sh run
