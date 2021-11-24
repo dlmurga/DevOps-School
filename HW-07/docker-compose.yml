@@ -5,16 +5,14 @@ services:
     build:
       context: java-build/
     volumes:
-      - java-app-dir:/package-07/hello-world-war/target
+      - ./java-app-dir:/package-07/hello-world-war/target
 
   java-run:
     build:
       context: java-run/
     volumes:
-      - java-app-dir:/data
+      - ./java-app-dir:/data
     ports:
       - "8080:8080"
     depends_on:
       - java-build
-volumes:
-  java-app-dir:
