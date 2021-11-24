@@ -1,3 +1,4 @@
+ARG BUILD_APP_DIR
 FROM ubuntu:20.04
 ARG DEBIAN_FRONTEND=noninteractive
 ENV PACKAGE_DIR="/package-07"

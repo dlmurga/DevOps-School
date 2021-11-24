@@ -1,3 +1,4 @@
+ARG RUN_APP_DIR
 FROM openjdk:18-jdk-alpine
 ENV CATALINA_HOME="/usr/local/tomcat"
 ADD http://dlcdn.apache.org/tomcat/tomcat-9/v9.0.55/bin/apache-tomcat-9.0.55.tar.gz /tmp/
