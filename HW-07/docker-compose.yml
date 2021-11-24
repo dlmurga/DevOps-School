@@ -5,16 +5,16 @@ services:
     build:
       context: java-build/
     volumes:
-      - java-app-dir:/build-app-07
+      - ./java-app-dir:/build-app-07
 
   java-run:
     build:
       context: java-run/
-    volumes:
-      - java-app-dir:/run-app-07
+#    volumes:
+ #     - java-app-dir:/run-app-07
     ports:
       - "8080:8080"
     depends_on:
       - java-build
-volumes:
-  java-app-dir:
+#volumes:
+#  java-app-dir:
