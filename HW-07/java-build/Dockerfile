@@ -9,4 +9,4 @@ RUN apt update \
 WORKDIR $PACKAGE_DIR
 RUN git clone http://github.com/efsavage/hello-world-war.git
 RUN mvn package -f $PACKAGE_DIR/hello-world-war/pom.xml
-RUN mkdir /build-app-07 && cp -r $PACKAGE_DIR/hello-world-war/target/ /build-app-07/
+CMD cp -r $PACKAGE_DIR/hello-world-war/target/ /build-app-07/
