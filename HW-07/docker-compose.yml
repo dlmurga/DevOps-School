@@ -10,6 +10,8 @@ services:
   java-run:
     build:
       context: java-run/
+    volumes:
+      - /java-app-dir:/usr/local/tomcat/webapps
 #    volumes:
  #     - java-app-dir:/run-app-07
     ports:
