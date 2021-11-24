@@ -6,6 +6,8 @@ services:
       context: java-build/
     volumes:
       - /java-app-dir:/build-app-07
+    ports:
+      - "8181:8080"
 
   java-run:
     build:
