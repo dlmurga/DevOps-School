@@ -4,19 +4,14 @@ services:
   java-build:
     build:
       context: java-build/
-      args:
-        BUILD_APP_DIR: $BUILD_APP_DIR
-
     volumes:
-      - ./java-app-dir:$BUILD_APP_DIR
+      - ./java-app-dir:/build-app-07
 
   java-run:
     build:
       context: java-run/
-      args:
-        RUN_APP_DIR: $RUN_APP_DIR
     volumes:
-      - ./java-app-dir:$RUN_APP_DIR
+      - ./java-app-dir:/run-app-07
     ports:
       - "8080:8080"
     depends_on:

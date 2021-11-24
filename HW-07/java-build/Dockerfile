@@ -1,4 +1,3 @@
-ARG BUILD_APP_DIR
 FROM ubuntu:20.04
 ARG DEBIAN_FRONTEND=noninteractive
 ENV PACKAGE_DIR="/package-07"
@@ -10,5 +9,4 @@ RUN apt update \
 WORKDIR $PACKAGE_DIR
 RUN git clone http://github.com/efsavage/hello-world-war.git
 RUN mvn package -f $PACKAGE_DIR/hello-world-war/pom.xml
-RUN mkdir ${BUILD_APP_DIR} \
-    && cp -r $PACKAGE_DIR/hello-world-war/target/hello-world-war-1.0.0 ${BUILD_APP_DIR}
+RUN cp -r $PACKAGE_DIR/hello-world-war/target/hello-world-war-1.0.0 /build-app-07
