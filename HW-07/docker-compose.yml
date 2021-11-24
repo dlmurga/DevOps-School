@@ -5,7 +5,7 @@ services:
     build:
       context: java-build/
     volumes:
-      - java-app-dir:/package-07/hello-world-war/target/
+      - java-app-dir:/package-07/hello-world-war/target
 
   java-run:
     build:
