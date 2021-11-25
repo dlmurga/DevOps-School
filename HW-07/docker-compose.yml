@@ -18,5 +18,3 @@ services:
       - java-build
 volumes:
   java-app-dir:
-
----
