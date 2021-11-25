@@ -1,0 +1,2 @@
+FROM tomcat:9.0.55-jre11-openjdk-slim
+
